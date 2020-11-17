@@ -1,0 +1,117 @@
+<h1>Customer Edit Form By Mmayen Ewang</h1>
+<form #starterForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      First Name: <input type="text" class="form-control"
+                       name="firstName"
+                       #firstName="ngModel"
+                       [(ngModel)]="customer.firstName"
+                       required />
+      <span *ngIf="!firstName.valid">First Name is required!</span>
+    </div>
+    <br />
+    <div>
+      Last Name: <input type="text" class="form-control"
+      name="lastName"
+      #lastName="ngModel"
+      [(ngModel)]="customer.lastName"
+      required />
+      <span *ngIf="!lastName.valid">Last Name is required!</span>
+    </div>
+    <br />
+    <div>
+      Address: <input type="text" class="form-control"
+      name="address"
+      #address="ngModel"
+      [(ngModel)]="customer.address"
+      required />
+      <span *ngIf="!address.valid">Address is required!</span>
+    </div>
+    <br />
+    <div>
+      City: <input type="text" class="form-control"
+      name="city"
+      #city="ngModel"
+      [(ngModel)]="customer.city"
+      required />
+      <span *ngIf="!city.valid">City is required!</span>
+    </div>
+    <br />
+    <div>
+      Province: <input type="text" class="form-control"
+      name="province"
+      #province="ngModel"
+      [(ngModel)]="customer.province"
+      required />
+      <span *ngIf="!province.valid">Province is required!</span>
+    </div>
+    <br />
+    <div>
+      Country: <input type="text" class="form-control"
+      name="country"
+      #country="ngModel"
+      [(ngModel)]="customer.country"
+      required />
+      <span *ngIf="!country.valid">Country is required!</span>
+    </div>
+    <br />
+    <div>
+      Postal Code: <input type="text" class="form-control"
+      name="postalCode"
+      #postalCode="ngModel"
+      [(ngModel)]="customer.postalCode"
+      required />
+      <span *ngIf="!postalCode.valid">Postal Code is required!</span>
+    </div>
+    <br />
+    <div>
+      Phone Number: <input type="tel" class="form-control"
+      name="phoneNumber"
+      #phoneNumber="ngModel"
+      placeholder="333-444-2222"
+      [(ngModel)]="customer.phoneNumber"
+      pattern="^\d{3}-\d{3}-\d{4}$ || ^\d{10}$"
+      required />
+      <span *ngIf="!phoneNumber.valid">Phone Number is required!</span>
+    </div>
+    <br />
+    <div>
+      Email: <input type="email" class="form-control"
+      name="email"
+      #email="ngModel"
+      [(ngModel)]="customer.email"
+      placeholder="email@example.com"
+      pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+      required />
+      <span *ngIf="!email.valid">Email is required!</span>
+    </div>
+    <br />
+    <button class="btn btn-default" [disabled]="!starterForm.valid">Submit</button>
+    <br /><br />
+    <div *ngIf="starterForm.valid && formSubmitted">
+      <span style="font-weight: bold;">First Name: </span>{{ customer.firstName }}
+    </div>
+    <div *ngIf="starterForm.valid && formSubmitted">
+      <span style="font-weight: bold;">Last Name: </span>{{ customer.lastName }}
+    </div>
+    <div *ngIf="starterForm.valid && formSubmitted">
+      <span style="font-weight: bold;">Address: </span>{{ customer.address }}
+    </div>
+    <div *ngIf="starterForm.valid && formSubmitted">
+      <span style="font-weight: bold;">City: </span>{{ customer.city }}
+    </div>
+    <div *ngIf="starterForm.valid && formSubmitted">
+      <span style="font-weight: bold;">Province: </span>{{ customer.province }}
+    </div>
+    <div *ngIf="starterForm.valid && formSubmitted">
+      <span style="font-weight: bold;">Country: </span>{{ customer.country }}
+    </div>
+    <div *ngIf="starterForm.valid && formSubmitted">
+      <span style="font-weight: bold;">Postal Code: </span>{{ customer.postalCode }}
+    </div>
+    <div *ngIf="starterForm.valid && formSubmitted">
+      <span style="font-weight: bold;">Phone Number: </span>{{ customer.phoneNumber }}
+    </div>
+    <div *ngIf="starterForm.valid && formSubmitted">
+      <span style="font-weight: bold;">Email: </span>{{ customer.email }}
+    </div>
+</form>
